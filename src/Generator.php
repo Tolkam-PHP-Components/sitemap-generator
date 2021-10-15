@@ -32,7 +32,7 @@ class Generator
     /**
      * @var array
      */
-    private $options = [
+    private array $options = [
         'sitemapLocPrefix' => '',
         'urlLocPrefix' => '',
     ];
@@ -121,7 +121,7 @@ class Generator
                 $url = $urls->current();
                 if (!$url instanceof Url) {
                     throw new InvalidArgumentException(sprintf(
-                        'Each url item must be instance of %s',
+                        'Each url item must be an instance of %s',
                         Url::class
                     ));
                 }
@@ -282,7 +282,7 @@ class Generator
      *
      * @return string
      */
-    private function buildUri(string $fileName)
+    private function buildUri(string $fileName): string
     {
         if (!is_dir($this->targetDir)) {
             mkdir($this->targetDir, 0755, true);

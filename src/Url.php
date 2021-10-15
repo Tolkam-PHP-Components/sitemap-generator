@@ -23,17 +23,17 @@ class Url
     protected string $location;
     
     /**
-     * @var DateTimeInterface
+     * @var DateTimeInterface|null
      */
     protected ?DateTimeInterface $lastModified = null;
     
     /**
-     * @var string
+     * @var string|null
      */
     protected ?string $changeFrequency = null;
     
     /**
-     * @var float
+     * @var float|null
      */
     protected ?float $priority = null;
     
@@ -140,16 +140,14 @@ class Url
      *
      * @param string $location
      *
-     * @return Url
+     * @return void
      */
-    private function setLocation(string $location): Url
+    private function setLocation(string $location): void
     {
         if (mb_strlen($location) > 2048) {
             throw new InvalidArgumentException('Location url is too long');
         }
         
         $this->location = $location;
-        
-        return $this;
     }
 }
