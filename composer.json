@@ -1,16 +1,11 @@
 {
     "name": "tolkam/sitemap-generator",
-    "description": "Generates XML sitemaps",
+    "description": "Dead-simple XML sitemaps generator",
     "type": "library",
     "license": "proprietary",
     "autoload": {
         "psr-4": {
             "Tolkam\\Sitemap\\": "src"
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
         }
     },
     "require": {
